@@ -1,0 +1,64 @@
+"use client";
+
+import React, { createContext, useContext, useEffect, useState } from "react";
+
+type Theme = "dark" | "light";
+
+interface ThemeContextType {
+  theme: Theme;
+  toggleTheme: () => void;
+  isLight: boolean;
+}
+
+const ThemeContext = createContext<ThemeContextType>({
+  theme: "dark",
+  toggleTheme: () => {},
+  isLight: false,
+});
+
+export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [theme, setTheme] = useState<Theme>("dark");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    const savedTheme = localStorage.getItem("bac_theme") as Theme | null;
+    if (savedTheme) {
+      setTheme(savedTheme);
+      applyTheme(savedTheme);
+    } else {
+      // Check system preference
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const initial = prefersDark ? "dark" : "dark"; // default to dark
+      setTheme(initial);
+      applyTheme(initial);
+    }
+  }, []);
+
+  const applyTheme = (t: Theme) => {
+    const root = document.documentElement;
+    if (t === "light") {
+      root.classList.remove("dark");
+      root.classList.add("light");
+    } else {
+      root.classList.remove("light");
+      root.classList.add("dark");
+    }
+  };
+
+  const toggleTheme = () => {
+    const next = theme === "dark" ? "light" : "dark";
+    setTheme(next);
+    localStorage.setItem("bac_theme", next);
+    applyTheme(next);
+  };
+
+  // Prevent flash or hydration mismatch while mounting
+  return (
+    <ThemeContext.Provider value={{ theme, toggleTheme, isLight: theme === "light" }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
+
+export const useTheme = () => useContext(ThemeContext);

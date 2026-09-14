@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { companyConfig } from "@/config/company";
+import { ThemeProvider } from "@/context/ThemeContext";
 
 export const metadata: Metadata = {
-  title: `${companyConfig.brand.nameEn} | Construction & Contracting Qatar (CR #${companyConfig.registry.crNumber})`,
-  description: `${companyConfig.brand.taglineEn}. Registered Qatari commercial contractor specializing in non-residential building, civil engineering, and fit-outs. Office: ${companyConfig.office.fullAddress}.`,
+  title: `${companyConfig.brand.nameEn} | Commercial Construction & Engineering Qatar`,
+  description: `${companyConfig.brand.taglineEn}. Premier Qatari contractor specializing in non-residential building, civil engineering, and fit-outs. Registered under CR #${companyConfig.registry.crNumber}.`,
   keywords: [
     "Bostik Accurate Construction",
     "Bostik Construction Qatar",
@@ -34,9 +35,29 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className="antialiased bg-[#0B192C] text-slate-100 selection:bg-[#D4AF37] selection:text-slate-950">
-        {children}
+    <html lang="en" className="dark scroll-smooth" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                const storedTheme = localStorage.getItem('bac_theme');
+                if (storedTheme === 'light') {
+                  document.documentElement.classList.remove('dark');
+                  document.documentElement.classList.add('light');
+                } else {
+                  document.documentElement.classList.remove('light');
+                  document.documentElement.classList.add('dark');
+                }
+              } catch (e) {}
+            `,
+          }}
+        />
+      </head>
+      <body className="antialiased selection:bg-[#D4AF37] selection:text-slate-950" suppressHydrationWarning>
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
