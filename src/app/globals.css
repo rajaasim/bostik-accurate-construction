@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-navy-dark: #0B192C;
+    --brand-navy-light: #1E3E62;
+    --brand-gold: #D4AF37;
+    --brand-gold-dark: #B8860B;
+    --brand-slate-bg: #0F172A;
+    --brand-slate-card: #1E293B;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  body {
+    background-color: #0B192C;
+    color: #F8FAFC;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
+
+/* Precise A4 Page Formatting for PDF Portfolio Printing */
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+@media print {
+  html, body {
+    width: 210mm !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #FFFFFF !important;
+    color: #0F172A !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide screen-only elements during print */
+  .no-print {
+    display: none !important;
+  }
+
+  /* Force exact A4 dimensions and page breaks */
+  .a4-page {
+    width: 210mm !important;
+    min-height: 297mm !important;
+    height: 297mm !important;
+    max-height: 297mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    box-shadow: none !important;
+    border: none !important;
+    overflow: hidden !important;
+    position: relative !important;
+    background-color: #FFFFFF !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* Screen presentation of A4 pages */
+@media screen {
+  .a4-page {
+    width: 210mm;
+    min-height: 297mm;
+    height: 297mm;
+    margin: 32px auto;
+    background: #FFFFFF;
+    color: #0F172A;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+}
