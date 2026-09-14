@@ -10,7 +10,7 @@ export const CoverPage: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-[#0B192C] via-[#0F1D33] to-[#1E3E62] z-0" />
       <div 
         className="absolute inset-0 opacity-15 bg-cover bg-center mix-blend-overlay z-0" 
-        style={{ backgroundImage: `url('https://images.unsplash.com/photo-1541888946425-d0fbb18615f8?auto=format&fit=crop&w=1600&q=80')` }}
+        style={{ backgroundImage: `url('https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1600&q=80')` }}
       />
       
       {/* Decorative Gold Geometry */}

@@ -142,7 +142,7 @@ export const companyConfig: CompanyProfile = {
         "Pre-engineered Steel Building Systems",
         "Turnkey Project Management from Ground to Handover",
       ],
-      imageUrl: "https://images.unsplash.com/photo-1541888946425-d0fbb18615f8?auto=format&fit=crop&w=1200&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80",
     },
     {
       id: "civil-structural",
@@ -252,7 +252,7 @@ export const companyConfig: CompanyProfile = {
       location: "West Bay, Doha, Qatar",
       completionYear: "2026",
       scope: "Upgraded dual-chiller plant, main distribution board replacements, and energy management automation integration.",
-      imageUrl: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80",
     },
   ],
 

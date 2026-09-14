@@ -37,7 +37,7 @@ export const CorporateOverviewPage: React.FC = () => {
 
         <div className="col-span-5 relative rounded-xl overflow-hidden shadow-md border border-slate-200">
           <img
-            src="https://images.unsplash.com/photo-1541888946425-d0fbb18615f8?auto=format&fit=crop&w=800&q=80"
+            src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80"
             alt="Construction Engineering"
             className="w-full h-full object-cover"
           />

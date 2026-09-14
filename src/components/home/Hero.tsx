@@ -12,7 +12,7 @@ export const Hero: React.FC = () => {
       <div
         className="absolute inset-0 z-0 bg-cover bg-center opacity-25 mix-blend-luminosity scale-100"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1541888946425-d0fbb18615f8?auto=format&fit=crop&w=2000&q=85')`,
+          backgroundImage: `url('https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=2000&q=85')`,
         }}
       />
       <div className="absolute inset-0 z-0 bg-gradient-to-t from-[#0B192C] via-[#0B192C]/85 to-transparent" />

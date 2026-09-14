@@ -1,137 +1,115 @@
 import React from "react";
 import Link from "next/link";
 import { companyConfig } from "@/config/company";
-import { ShieldCheck, Target, Compass, Award, CheckCircle2, Landmark, ArrowRight } from "lucide-react";
+import { ArrowRight, CheckCircle2, ShieldCheck, Compass, Target } from "lucide-react";
 
 export const AboutSection: React.FC = () => {
   return (
-    <section id="about" className="py-20 bg-[#0F172A] text-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center space-x-2 text-xs font-bold text-[#D4AF37] uppercase tracking-widest px-3 py-1 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 mb-3">
-            <Landmark className="w-3.5 h-3.5" />
-            <span>Corporate Identity & Regulatory Status</span>
-          </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight uppercase">
-            Engineering Built On <br />
-            <span className="text-[#D4AF37]">Trust & Precision</span>
-          </h2>
-          <div className="w-16 h-1 bg-[#D4AF37] mx-auto mt-3 rounded-full" />
-        </div>
+    <section id="about" className="py-24 bg-[#081220] text-white relative overflow-hidden">
+      {/* Background Architectural Accent */}
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-[#0E1D33]/40 -skew-x-12 pointer-events-none" />
 
-        {/* Two-Column About Details */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-16">
-          {/* Left Description Column */}
-          <div className="lg:col-span-7 space-y-5">
-            <h3 className="text-xl sm:text-2xl font-extrabold text-white leading-snug">
-              A Dedicated Qatari Contractor for Commercial & Non-Residential Structures
-            </h3>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          {/* Left Editorial Narrative (7 cols) */}
+          <div className="lg:col-span-7 space-y-6">
+            <div className="flex items-center space-x-3">
+              <span className="h-px w-8 bg-[#D4AF37]" />
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4AF37]">
+                Engineering Heritage & Integrity
+              </span>
+            </div>
 
-            <p className="text-slate-300 text-sm leading-relaxed">
+            <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight leading-tight">
+              Executing Qatar&apos;s Commercial Vision with Absolute Rigor
+            </h2>
+
+            <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-light">
               {companyConfig.brand.descriptionEn}
             </p>
 
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
-              Operating strictly under Qatar Ministry of Commerce and Industry Activity Code <span className="font-mono text-[#D4AF37] font-bold">{companyConfig.registry.primaryActivityCode}</span> (&quot;{companyConfig.registry.primaryActivityEn}&quot;), we are equipped to tackle complex site conditions, stringent QA/QC protocols, and fast-track project handovers.
+            <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+              We operate with a direct, owner-led management style. Our site engineers and project directors maintain daily command over every concrete pour, structural frame, and MEP system—ensuring complete alignment with Qatar Construction Specifications (QCS 2014) and rigorous safety standards without bureaucratic overhead.
             </p>
 
-            {/* Core Values Bullet Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-              <div className="flex items-start space-x-2.5 p-3 rounded-xl bg-slate-800/60 border border-slate-700/60">
-                <CheckCircle2 className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
-                <div className="text-xs">
-                  <span className="font-bold text-white block">QCS Compliant:</span>
-                  <span className="text-slate-400">Strict adherence to Qatar Construction Specs.</span>
-                </div>
+            {/* Distinct 3-Column Differentiator Strip */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-800">
+              <div>
+                <div className="text-lg font-black text-[#D4AF37]">Turnkey</div>
+                <div className="text-xs font-bold text-white mt-0.5">End-to-End Scope</div>
+                <p className="text-[11px] text-slate-400 mt-1 leading-snug">
+                  From geotechnical earthworks to final QCDD clearance.
+                </p>
               </div>
 
-              <div className="flex items-start space-x-2.5 p-3 rounded-xl bg-slate-800/60 border border-slate-700/60">
-                <CheckCircle2 className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
-                <div className="text-xs">
-                  <span className="font-bold text-white block">Zero Harm HSE:</span>
-                  <span className="text-slate-400">Comprehensive safety plans, daily TBT & PPE.</span>
-                </div>
+              <div>
+                <div className="text-lg font-black text-[#D4AF37]">Zero Harm</div>
+                <div className="text-xs font-bold text-white mt-0.5">Safety Culture</div>
+                <p className="text-[11px] text-slate-400 mt-1 leading-snug">
+                  Daily hazard identification and certified safety marshals.
+                </p>
               </div>
 
-              <div className="flex items-start space-x-2.5 p-3 rounded-xl bg-slate-800/60 border border-slate-700/60">
-                <CheckCircle2 className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
-                <div className="text-xs">
-                  <span className="font-bold text-white block">Authority Approved:</span>
-                  <span className="text-slate-400">QCDD, Kahramaa, and Municipal clearance handling.</span>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-2.5 p-3 rounded-xl bg-slate-800/60 border border-slate-700/60">
-                <CheckCircle2 className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
-                <div className="text-xs">
-                  <span className="font-bold text-white block">Turnkey Delivery:</span>
-                  <span className="text-slate-400">Single contract responsibility from subgrade to finishes.</span>
-                </div>
+              <div>
+                <div className="text-lg font-black text-[#D4AF37]">Active CR</div>
+                <div className="text-xs font-bold text-white mt-0.5">MOCI Certified</div>
+                <p className="text-[11px] text-slate-400 mt-1 leading-snug">
+                  Qatar Chamber of Commerce verified enterprise.
+                </p>
               </div>
             </div>
 
-            <div className="pt-3">
+            <div className="pt-2">
               <Link
                 href="/about"
-                className="inline-flex items-center space-x-2 text-xs font-bold text-[#D4AF37] hover:text-amber-300 transition-colors"
+                className="inline-flex items-center space-x-2 text-xs font-bold text-[#D4AF37] hover:text-amber-300 transition-colors uppercase tracking-wider"
               >
-                <span>Read Full Company Profile & MD Statement</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <span>Discover Our History, Vision & Leadership</span>
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
 
-          {/* Right Column: Commercial Registration Certificate Card */}
-          <div className="lg:col-span-5">
-            <div className="p-7 rounded-2xl bg-[#0B192C] border-2 border-[#D4AF37]/40 shadow-2xl relative overflow-hidden">
-              <div className="flex items-center justify-between border-b border-slate-800 pb-4 mb-5">
-                <div>
-                  <span className="text-[10px] font-bold text-[#D4AF37] uppercase tracking-widest block">
-                    Official Verification
-                  </span>
-                  <div className="text-base font-black text-white">
-                    Commercial Registration
+          {/* Right Architectural Visual Montage (5 cols) */}
+          <div className="lg:col-span-5 relative">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-700/80 bg-slate-900 group">
+              {/* Primary Photo */}
+              <div className="h-96 overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1000&q=80"
+                  alt="Commercial Structural Architecture"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+
+              {/* Floating Dark Glass Stats Card */}
+              <div className="absolute bottom-4 left-4 right-4 p-5 rounded-xl bg-[#081220]/90 backdrop-blur-md border border-white/10 text-white shadow-xl">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="text-xs uppercase tracking-widest text-[#D4AF37] font-bold">
+                      State of Qatar
+                    </div>
+                    <div className="text-sm font-bold text-white mt-0.5">
+                      Commercial & Industrial Execution
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <span className="text-xs font-mono font-bold text-emerald-400 bg-emerald-950/60 px-2.5 py-1 rounded border border-emerald-800">
+                      100% On-Time
+                    </span>
                   </div>
                 </div>
-                <div className="w-9 h-9 rounded-xl bg-[#D4AF37]/15 border border-[#D4AF37]/40 flex items-center justify-center text-[#D4AF37]">
-                  <ShieldCheck className="w-4 h-4" />
-                </div>
               </div>
+            </div>
 
-              <div className="space-y-3 text-xs">
-                <div className="flex items-center justify-between p-2.5 rounded-lg bg-slate-900 border border-slate-800">
-                  <span className="text-slate-400">C.R Number:</span>
-                  <span className="font-mono text-base font-extrabold text-[#D4AF37]">
-                    {companyConfig.registry.crNumber}
-                  </span>
-                </div>
-
-                <div className="flex items-center justify-between p-2.5 rounded-lg bg-slate-900 border border-slate-800">
-                  <span className="text-slate-400">C.R Status:</span>
-                  <span className="inline-flex items-center space-x-1 text-emerald-400 font-bold">
-                    <CheckCircle2 className="w-3 h-3" />
-                    <span>Active (نشط)</span>
-                  </span>
-                </div>
-
-                <div className="flex items-center justify-between p-2.5 rounded-lg bg-slate-900 border border-slate-800">
-                  <span className="text-slate-400">Activity Code:</span>
-                  <span className="font-mono font-bold text-white">
-                    {companyConfig.registry.primaryActivityCode}
-                  </span>
-                </div>
-
-                <div className="p-2.5 rounded-lg bg-slate-900 border border-slate-800">
-                  <span className="text-slate-400 block mb-0.5 text-[10px]">Authorized Activity:</span>
-                  <span className="text-slate-200 font-medium leading-snug block text-xs">
-                    {companyConfig.registry.primaryActivityEn}
-                  </span>
-                </div>
+            {/* Secondary Floating Accent Badge */}
+            <div className="hidden sm:flex absolute -top-5 -left-5 p-4 rounded-xl bg-[#0B192C] border border-[#D4AF37]/40 shadow-2xl items-center space-x-3 text-xs">
+              <div className="w-9 h-9 rounded-lg bg-[#D4AF37]/20 flex items-center justify-center text-[#D4AF37]">
+                <ShieldCheck className="w-5 h-5" />
               </div>
-
-              <div className="mt-5 pt-3 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-400">
-                <span>{companyConfig.registry.chamberMembership}</span>
+              <div>
+                <div className="font-extrabold text-white">QCS 2014 Compliant</div>
+                <div className="text-[10px] text-slate-400">Strict Quality Assurance</div>
               </div>
             </div>
           </div>
