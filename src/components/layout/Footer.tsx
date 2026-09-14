@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { companyConfig } from "@/config/company";
-import { ShieldCheck, MapPin, Phone, Mail, Award, ArrowUpRight, ExternalLink } from "lucide-react";
+import { ShieldCheck, MapPin, Phone, Mail, Award, ArrowUpRight } from "lucide-react";
 
 export const Footer: React.FC = () => {
   const { businessDevelopment, operationsManager } = companyConfig.contacts;
@@ -16,10 +16,10 @@ export const Footer: React.FC = () => {
               <Award className="w-4 h-4" />
               <span>Official Qatar Commercial Contractor</span>
             </div>
-            <h3 className="text-2xl font-black text-white">
+            <h3 className="text-xl sm:text-2xl font-black text-white">
               Ready to Discuss Your Commercial Project?
             </h3>
-            <p className="text-sm text-slate-300 max-w-xl">
+            <p className="text-xs sm:text-sm text-slate-300 max-w-xl">
               From preliminary constructability studies to complete turnkey execution under Qatar Construction Specifications (QCS).
             </p>
           </div>
@@ -82,19 +82,32 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Col 2: Core Capabilities */}
+        {/* Col 2: Navigation Links */}
         <div className="space-y-4">
           <h4 className="text-xs font-bold text-white uppercase tracking-widest border-b border-slate-800 pb-2">
-            Licensed Capabilities
+            Company Portal
           </h4>
           <ul className="space-y-2.5 text-xs text-slate-400">
-            {companyConfig.services.map((s) => (
-              <li key={s.id} className="hover:text-[#D4AF37] transition-colors">
-                <Link href="#services">{s.title}</Link>
-              </li>
-            ))}
-            <li className="pt-2 text-[11px] text-slate-500">
-              Activity Code: {companyConfig.registry.primaryActivityCode} (Non-Residential Construction)
+            <li>
+              <Link href="/about" className="hover:text-[#D4AF37] transition-colors">About Our Enterprise</Link>
+            </li>
+            <li>
+              <Link href="/services" className="hover:text-[#D4AF37] transition-colors">Scope of Contracting Services</Link>
+            </li>
+            <li>
+              <Link href="/projects" className="hover:text-[#D4AF37] transition-colors">Demonstrated Field Projects</Link>
+            </li>
+            <li>
+              <Link href="/hse-quality" className="hover:text-[#D4AF37] transition-colors">HSE Standards & QA/QC Policy</Link>
+            </li>
+            <li>
+              <Link href="/leadership" className="hover:text-[#D4AF37] transition-colors">Leadership & Management</Link>
+            </li>
+            <li>
+              <Link href="/contact" className="hover:text-[#D4AF37] transition-colors">Contact & Tender Submissions</Link>
+            </li>
+            <li>
+              <Link href="/portfolio" className="hover:text-[#D4AF37] transition-colors text-[#D4AF37] font-semibold">10-Page A4 PDF Portfolio</Link>
             </li>
           </ul>
         </div>

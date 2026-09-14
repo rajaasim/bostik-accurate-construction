@@ -1,47 +1,48 @@
 import React from "react";
+import Link from "next/link";
 import { companyConfig } from "@/config/company";
-import { Users, Phone, Mail, MessageSquare, ShieldCheck, Briefcase } from "lucide-react";
+import { Users, Phone, Mail, MessageSquare, ShieldCheck, Briefcase, ArrowRight } from "lucide-react";
 
 export const TeamSection: React.FC = () => {
   const { businessDevelopment, operationsManager } = companyConfig.contacts;
 
   return (
-    <section id="team" className="py-24 bg-[#0F172A] text-white relative">
+    <section id="team" className="py-20 bg-[#0F172A] text-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center space-x-2 text-xs font-bold text-[#D4AF37] uppercase tracking-widest px-3.5 py-1 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 mb-3">
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="inline-flex items-center space-x-2 text-xs font-bold text-[#D4AF37] uppercase tracking-widest px-3 py-1 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 mb-3">
             <Users className="w-3.5 h-3.5" />
             <span>Key Personnel & Leadership</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight uppercase">
             Operational <span className="text-[#D4AF37]">Management</span>
           </h2>
-          <div className="w-20 h-1 bg-[#D4AF37] mx-auto mt-4 rounded-full" />
-          <p className="text-slate-400 text-sm sm:text-base mt-4">
-            Hands-on executive leadership ensuring direct client communication, rigorous site supervision, and transparent contract delivery.
+          <div className="w-16 h-1 bg-[#D4AF37] mx-auto mt-3 rounded-full" />
+          <p className="text-slate-400 text-xs sm:text-sm mt-3">
+            Direct client communication and site supervision led by executive management.
           </p>
         </div>
 
         {/* Two Key Leaders Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-10">
           {/* Operations Manager: Awais Qamar */}
           <div className="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-[#D4AF37]/40 transition-all shadow-xl flex flex-col justify-between">
             <div>
               <div className="flex items-center space-x-4 mb-4">
-                <div className="w-16 h-16 rounded-2xl bg-[#0B192C] border-2 border-[#D4AF37] flex items-center justify-center text-[#D4AF37] font-black text-xl shadow-lg">
+                <div className="w-14 h-14 rounded-2xl bg-[#0B192C] border-2 border-[#D4AF37] flex items-center justify-center text-[#D4AF37] font-black text-lg shadow-md">
                   AQ
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white">{operationsManager.name}</h3>
+                  <h3 className="text-base font-bold text-white">{operationsManager.name}</h3>
                   <div className="text-xs font-semibold text-[#D4AF37]">{operationsManager.role}</div>
-                  <div className="text-[11px] text-slate-400 font-arabic">{operationsManager.roleArabic}</div>
+                  <div className="text-[10px] text-slate-400 font-arabic">{operationsManager.roleArabic}</div>
                 </div>
               </div>
 
-              <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-blue-900/30 text-blue-300 border border-blue-700/50 text-xs font-semibold mb-4">
+              <div className="inline-flex items-center space-x-1.5 px-3 py-0.5 rounded-full bg-blue-900/30 text-blue-300 border border-blue-700/50 text-[11px] font-semibold mb-4">
                 <ShieldCheck className="w-3.5 h-3.5 text-blue-400" />
-                <span>Managing Director (Qatar CR 226852)</span>
+                <span>Full Authority (Qatar CR 226852)</span>
               </div>
 
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
@@ -49,9 +50,8 @@ export const TeamSection: React.FC = () => {
               </p>
             </div>
 
-            {/* Direct Contact Buttons */}
-            <div className="pt-6 border-t border-slate-800 space-y-2.5">
-              <div className="flex items-center justify-between text-xs">
+            <div className="pt-4 border-t border-slate-800 space-y-2 text-xs">
+              <div className="flex items-center justify-between">
                 <span className="text-slate-400">Direct Line:</span>
                 <a
                   href={`tel:${operationsManager.phone}`}
@@ -61,24 +61,14 @@ export const TeamSection: React.FC = () => {
                 </a>
               </div>
 
-              <div className="flex items-center justify-between text-xs">
-                <span className="text-slate-400">Corporate Email:</span>
-                <a
-                  href={`mailto:${operationsManager.email}`}
-                  className="font-mono text-slate-300 hover:text-white transition-colors"
-                >
-                  {operationsManager.email}
-                </a>
-              </div>
-
-              <div className="pt-2">
+              <div>
                 <a
                   href={`https://wa.me/${operationsManager.whatsapp}?text=Hello%20Awais,%20I%20am%20contacting%20you%20regarding%20a%20construction%20project.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full flex items-center justify-center space-x-2 py-2.5 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/40 text-emerald-400 text-xs font-bold transition-all"
                 >
-                  <MessageSquare className="w-4 h-4" />
+                  <MessageSquare className="w-3.5 h-3.5" />
                   <span>WhatsApp Operations</span>
                 </a>
               </div>
@@ -89,17 +79,17 @@ export const TeamSection: React.FC = () => {
           <div className="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-[#D4AF37]/40 transition-all shadow-xl flex flex-col justify-between">
             <div>
               <div className="flex items-center space-x-4 mb-4">
-                <div className="w-16 h-16 rounded-2xl bg-[#1E3E62] border-2 border-blue-400 flex items-center justify-center text-white font-black text-xl shadow-lg">
+                <div className="w-14 h-14 rounded-2xl bg-[#1E3E62] border-2 border-blue-400 flex items-center justify-center text-white font-black text-lg shadow-md">
                   JO
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white">{businessDevelopment.name}</h3>
+                  <h3 className="text-base font-bold text-white">{businessDevelopment.name}</h3>
                   <div className="text-xs font-semibold text-blue-300">{businessDevelopment.role}</div>
-                  <div className="text-[11px] text-slate-400 font-arabic">{businessDevelopment.roleArabic}</div>
+                  <div className="text-[10px] text-slate-400 font-arabic">{businessDevelopment.roleArabic}</div>
                 </div>
               </div>
 
-              <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-amber-900/30 text-amber-300 border border-amber-700/50 text-xs font-semibold mb-4">
+              <div className="inline-flex items-center space-x-1.5 px-3 py-0.5 rounded-full bg-amber-900/30 text-amber-300 border border-amber-700/50 text-[11px] font-semibold mb-4">
                 <Briefcase className="w-3.5 h-3.5 text-amber-400" />
                 <span>Commercial Relations & Tenders</span>
               </div>
@@ -109,9 +99,8 @@ export const TeamSection: React.FC = () => {
               </p>
             </div>
 
-            {/* Direct Contact Buttons */}
-            <div className="pt-6 border-t border-slate-800 space-y-2.5">
-              <div className="flex items-center justify-between text-xs">
+            <div className="pt-4 border-t border-slate-800 space-y-2 text-xs">
+              <div className="flex items-center justify-between">
                 <span className="text-slate-400">Direct Line:</span>
                 <a
                   href={`tel:${businessDevelopment.phone}`}
@@ -121,29 +110,30 @@ export const TeamSection: React.FC = () => {
                 </a>
               </div>
 
-              <div className="flex items-center justify-between text-xs">
-                <span className="text-slate-400">Corporate Email:</span>
-                <a
-                  href={`mailto:${businessDevelopment.email}`}
-                  className="font-mono text-slate-300 hover:text-white transition-colors"
-                >
-                  {businessDevelopment.email}
-                </a>
-              </div>
-
-              <div className="pt-2">
+              <div>
                 <a
                   href={`https://wa.me/${businessDevelopment.whatsapp}?text=Hello%20Jhunelle,%20I%20would%20like%20to%20discuss%20a%20commercial%20opportunity.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full flex items-center justify-center space-x-2 py-2.5 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/40 text-emerald-400 text-xs font-bold transition-all"
                 >
-                  <MessageSquare className="w-4 h-4" />
+                  <MessageSquare className="w-3.5 h-3.5" />
                   <span>WhatsApp Business Development</span>
                 </a>
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Link to Leadership subpage */}
+        <div className="text-center">
+          <Link
+            href="/leadership"
+            className="inline-flex items-center space-x-2 px-6 py-3 rounded-xl bg-slate-900 border border-[#D4AF37]/40 hover:bg-[#D4AF37]/10 text-xs font-bold text-[#D4AF37] transition-all"
+          >
+            <span>View Full Organizational Structure & Governance</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
         </div>
       </div>
     </section>
