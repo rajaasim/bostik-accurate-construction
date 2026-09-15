@@ -49,7 +49,7 @@ export const Footer: React.FC = () => {
         {/* Col 1: Identity & Legal Registration */}
         <div className="space-y-4">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-[#1E3E62] border border-[#D4AF37]/50 flex items-center justify-center p-1 shadow-md">
+            <div className="w-10 h-10 rounded-xl bg-white border border-slate-200/80 flex items-center justify-center p-1 shadow-md">
               <img
                 src="/bostikaccurate-logo.svg"
                 alt="Bostik Accurate Logo"

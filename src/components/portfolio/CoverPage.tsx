@@ -21,7 +21,7 @@ export const CoverPage: React.FC = () => {
         {/* Top Header Section */}
         <div className="flex items-center justify-between border-b border-white/15 pb-6">
           <div className="flex items-center space-x-4">
-            <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#1E3E62] to-[#0B192C] border-2 border-[#D4AF37] flex items-center justify-center p-2 shadow-2xl">
+            <div className="w-16 h-16 rounded-xl bg-white border-2 border-[#D4AF37] flex items-center justify-center p-2 shadow-2xl">
               <img
                 src="/bostikaccurate-logo.svg"
                 alt="Bostik Accurate Logo"

@@ -124,6 +124,20 @@ html.light .glass-panel {
     background-color: #FFFFFF !important;
     box-sizing: border-box !important;
   }
+
+  .a4-page-responsive-outer,
+  .a4-page-scalable-box,
+  .a4-page-inner-transform {
+    width: 210mm !important;
+    min-height: 297mm !important;
+    height: 297mm !important;
+    max-height: 297mm !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    display: block !important;
+  }
 }
 
 /* Screen presentation of A4 pages */
@@ -132,7 +146,7 @@ html.light .glass-panel {
     width: 210mm;
     min-height: 297mm;
     height: 297mm;
-    margin: 32px auto;
+    margin: 0 auto;
     background: #FFFFFF;
     color: #0F172A;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);

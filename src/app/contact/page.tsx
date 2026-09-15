@@ -5,12 +5,13 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { companyConfig } from "@/config/company";
-import { MapPin, Phone, Mail, MessageSquare, Send, CheckCircle2, ShieldCheck, Clock, FileText } from "lucide-react";
+import { MapPin, Phone, Mail, MessageSquare, Send, CheckCircle2, ShieldCheck, Clock, FileText, Loader2 } from "lucide-react";
 import Link from "next/link";
 
 export default function ContactPage() {
   const { businessDevelopment, operationsManager } = companyConfig.contacts;
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -20,10 +21,43 @@ export default function ContactPage() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    try {
+      await fetch("https://formsubmit.co/ajax/contact@bostikaccurate.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          _subject: `New Commercial Inquiry: ${formData.name} (${formData.company || "Individual"})`,
+          Name: formData.name,
+          Company: formData.company || "N/A",
+          Phone: formData.phone,
+          Email: formData.email,
+          Service: formData.serviceType,
+          Requirements: formData.message,
+        }),
+      });
+    } catch (err) {
+      console.error("Submission dispatch error:", err);
+    } finally {
+      setIsSubmitting(false);
+      setSubmitted(true);
+    }
   };
+
+  const mailtoLink = `mailto:${companyConfig.brand.primaryEmail}?subject=${encodeURIComponent(
+    `Commercial Inquiry - ${formData.company || formData.name}`
+  )}&body=${encodeURIComponent(
+    `Name: ${formData.name}\nCompany: ${formData.company || "N/A"}\nPhone: ${formData.phone}\nEmail: ${formData.email}\nScope: ${formData.message}`
+  )}`;
+
+  const waLink = `https://wa.me/${businessDevelopment.whatsapp}?text=${encodeURIComponent(
+    `Hello ${businessDevelopment.name}, I am contacting you regarding a project inquiry for ${formData.name} (${formData.company || "Commercial"}). Scope: ${formData.message}`
+  )}`;
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-[#0B192C] text-slate-900 dark:text-slate-100 flex flex-col transition-colors duration-300">
@@ -48,21 +82,28 @@ export default function ContactPage() {
                     </div>
                     <h2 className="text-2xl font-bold text-white">Thank You for Your Submission</h2>
                     <p className="text-sm text-slate-300 max-w-md mx-auto">
-                      Your commercial inquiry has been assigned to our Business Development team. We will review your requirements and respond promptly.
+                      Your commercial inquiry has been dispatched to our commercial estimating team at <strong className="text-[#D4AF37]">contact@bostikaccurate.com</strong>.
                     </p>
-                    <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
+                    <div className="pt-4 flex flex-wrap items-center justify-center gap-3">
                       <a
-                        href={`https://wa.me/${businessDevelopment.whatsapp}?text=Hello%20${businessDevelopment.name},%20I%20just%20submitted%20a%20project%20inquiry.`}
+                        href={waLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center space-x-2 px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider"
+                        className="inline-flex items-center space-x-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider"
                       >
                         <MessageSquare className="w-4 h-4" />
-                        <span>Message on WhatsApp</span>
+                        <span>Chat on WhatsApp Now</span>
+                      </a>
+                      <a
+                        href={mailtoLink}
+                        className="inline-flex items-center space-x-2 px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs uppercase tracking-wider border border-slate-700"
+                      >
+                        <Mail className="w-4 h-4" />
+                        <span>Open Email Client</span>
                       </a>
                       <button
                         onClick={() => setSubmitted(false)}
-                        className="px-6 py-3 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-bold"
+                        className="px-5 py-3 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-bold"
                       >
                         Submit Another Inquiry
                       </button>
@@ -172,10 +213,20 @@ export default function ContactPage() {
 
                     <button
                       type="submit"
-                      className="w-full flex items-center justify-center space-x-2 bg-[#D4AF37] hover:bg-[#B8860B] text-slate-950 font-black text-xs py-4 rounded-xl shadow-lg transition-transform active:scale-95 uppercase tracking-wider cursor-pointer"
+                      disabled={isSubmitting}
+                      className="w-full flex items-center justify-center space-x-2 bg-[#D4AF37] hover:bg-[#B8860B] text-slate-950 font-black text-xs py-4 rounded-xl shadow-lg transition-transform active:scale-95 uppercase tracking-wider cursor-pointer disabled:opacity-50"
                     >
-                      <Send className="w-4 h-4" />
-                      <span>Transmit Tender Inquiry</span>
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="w-4 h-4 animate-spin" />
+                          <span>Transmitting Tender Inquiry...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Send className="w-4 h-4" />
+                          <span>Transmit Tender Inquiry</span>
+                        </>
+                      )}
                     </button>
                   </form>
                 )}

@@ -2,11 +2,12 @@
 
 import React, { useState } from "react";
 import { companyConfig } from "@/config/company";
-import { MapPin, Mail, MessageSquare, Send, CheckCircle2, ShieldCheck } from "lucide-react";
+import { MapPin, Mail, MessageSquare, Send, CheckCircle2, ShieldCheck, Loader2, ArrowRight } from "lucide-react";
 
 export const ContactSection: React.FC = () => {
   const { businessDevelopment, operationsManager } = companyConfig.contacts;
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -16,10 +17,43 @@ export const ContactSection: React.FC = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    try {
+      await fetch("https://formsubmit.co/ajax/contact@bostikaccurate.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          _subject: `New Commercial Inquiry: ${formData.name} (${formData.company || "Individual"})`,
+          Name: formData.name,
+          Company: formData.company || "N/A",
+          Phone: formData.phone,
+          Email: formData.email,
+          Service: formData.serviceType,
+          Requirements: formData.message,
+        }),
+      });
+    } catch (err) {
+      console.error("Submission dispatch error:", err);
+    } finally {
+      setIsSubmitting(false);
+      setSubmitted(true);
+    }
   };
+
+  const mailtoLink = `mailto:${companyConfig.brand.primaryEmail}?subject=${encodeURIComponent(
+    `Commercial Inquiry - ${formData.company || formData.name}`
+  )}&body=${encodeURIComponent(
+    `Name: ${formData.name}\nCompany: ${formData.company || "N/A"}\nPhone: ${formData.phone}\nEmail: ${formData.email}\nScope: ${formData.message}`
+  )}`;
+
+  const waLink = `https://wa.me/${businessDevelopment.whatsapp}?text=${encodeURIComponent(
+    `Hello ${businessDevelopment.name}, I am contacting you regarding a project inquiry for ${formData.name} (${formData.company || "Commercial"}). Scope: ${formData.message}`
+  )}`;
 
   return (
     <section id="contact" className="py-24 bg-slate-100/70 dark:bg-[#0B192C] text-slate-900 dark:text-white relative transition-colors duration-300">
@@ -50,18 +84,31 @@ export const ContactSection: React.FC = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Thank You for Your Inquiry</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-300 max-w-md mx-auto">
-                  Your project submission has been routed to our Business Development Manager, {businessDevelopment.name}. Our commercial team will contact you promptly.
+                  Your project submission has been dispatched to our commercial team at <strong className="text-amber-700 dark:text-[#D4AF37]">contact@bostikaccurate.com</strong>.
                 </p>
-                <div className="pt-4">
+                <div className="pt-4 flex flex-wrap items-center justify-center gap-3">
                   <a
-                    href={`https://wa.me/${businessDevelopment.whatsapp}?text=Hello%20${businessDevelopment.name},%20I%20just%20submitted%20a%20project%20inquiry%20from%20the%20website.`}
+                    href={waLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-2 px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider shadow-md"
+                    className="inline-flex items-center space-x-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider shadow-md"
                   >
                     <MessageSquare className="w-4 h-4" />
                     <span>Chat on WhatsApp Now</span>
                   </a>
+                  <a
+                    href={mailtoLink}
+                    className="inline-flex items-center space-x-2 px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs uppercase tracking-wider shadow-md border border-slate-700"
+                  >
+                    <Mail className="w-4 h-4" />
+                    <span>Open Email Client</span>
+                  </a>
+                  <button
+                    onClick={() => setSubmitted(false)}
+                    className="px-5 py-3 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 text-xs font-bold"
+                  >
+                    New Inquiry
+                  </button>
                 </div>
               </div>
             ) : (
@@ -166,10 +213,20 @@ export const ContactSection: React.FC = () => {
 
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center space-x-2 bg-gradient-to-r from-[#D4AF37] via-amber-400 to-[#B8860B] text-slate-950 font-black text-xs py-4 rounded-xl shadow-lg transition-transform active:scale-95 uppercase tracking-wider cursor-pointer"
+                  disabled={isSubmitting}
+                  className="w-full flex items-center justify-center space-x-2 bg-gradient-to-r from-[#D4AF37] via-amber-400 to-[#B8860B] text-slate-950 font-black text-xs py-4 rounded-xl shadow-lg transition-transform active:scale-95 uppercase tracking-wider cursor-pointer disabled:opacity-50"
                 >
-                  <Send className="w-4 h-4" />
-                  <span>Submit Inquiry to Commercial Team</span>
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      <span>Transmitting Inquiry...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4" />
+                      <span>Submit Inquiry to Commercial Team</span>
+                    </>
+                  )}
                 </button>
               </form>
             )}

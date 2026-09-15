@@ -35,19 +35,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark scroll-smooth" suppressHydrationWarning>
+    <html lang="en" className="light scroll-smooth" suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
             __html: `
               try {
                 const storedTheme = localStorage.getItem('bac_theme');
-                if (storedTheme === 'light') {
-                  document.documentElement.classList.remove('dark');
-                  document.documentElement.classList.add('light');
-                } else {
+                if (storedTheme === 'dark') {
                   document.documentElement.classList.remove('light');
                   document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
+                  document.documentElement.classList.add('light');
                 }
               } catch (e) {}
             `,

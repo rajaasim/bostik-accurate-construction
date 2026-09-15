@@ -11,13 +11,13 @@ interface ThemeContextType {
 }
 
 const ThemeContext = createContext<ThemeContextType>({
-  theme: "dark",
+  theme: "light",
   toggleTheme: () => {},
-  isLight: false,
+  isLight: true,
 });
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>("dark");
+  const [theme, setTheme] = useState<Theme>("light");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -27,9 +27,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       setTheme(savedTheme);
       applyTheme(savedTheme);
     } else {
-      // Check system preference
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      const initial = prefersDark ? "dark" : "dark"; // default to dark
+      const initial: Theme = "light"; // default to light
       setTheme(initial);
       applyTheme(initial);
     }

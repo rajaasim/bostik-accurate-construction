@@ -34,7 +34,7 @@ export const A4PageWrapper: React.FC<A4PageWrapperProps> = ({
       {/* Header */}
       <header className="px-10 pt-6 pb-4 border-b border-slate-200 flex items-center justify-between shrink-0">
         <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 rounded bg-[#0B192C] flex items-center justify-center p-1 border border-[#D4AF37]/40 shadow-xs">
+          <div className="w-10 h-10 rounded bg-white flex items-center justify-center p-1 border border-slate-200 shadow-xs">
             <img
               src="/bostikaccurate-logo.svg"
               alt="Bostik Accurate Logo"

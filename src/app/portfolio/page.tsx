@@ -13,10 +13,12 @@ import { EquipmentResourcesPage } from "@/components/portfolio/EquipmentResource
 import { ProjectsShowcasePage } from "@/components/portfolio/ProjectsShowcasePage";
 import { LeadershipPage } from "@/components/portfolio/LeadershipPage";
 import { ContactDirectoryPage } from "@/components/portfolio/ContactDirectoryPage";
-import { Printer, ArrowLeft, Download, Info, CheckCircle2, FileText } from "lucide-react";
+import { A4ResponsiveContainer } from "@/components/portfolio/A4ResponsiveContainer";
+import { Printer, ArrowLeft, Download, Info, CheckCircle2, FileText, Smartphone, Maximize2 } from "lucide-react";
 
 export default function PortfolioPage() {
   const [showPrintModal, setShowPrintModal] = useState(false);
+  const [zoomMode, setZoomMode] = useState<"fit" | "actual">("fit");
 
   const handlePrint = () => {
     window.print();
@@ -49,21 +51,39 @@ export default function PortfolioPage() {
             </div>
           </div>
 
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-2 sm:space-x-3 w-full sm:w-auto justify-end">
+            <button
+              onClick={() => setZoomMode(zoomMode === "fit" ? "actual" : "fit")}
+              className="text-xs text-slate-300 hover:text-white flex items-center space-x-1 px-2.5 py-2 rounded-lg bg-white/5 border border-white/10 transition-colors"
+              title={zoomMode === "fit" ? "Switch to 100% actual size" : "Fit to mobile screen width"}
+            >
+              {zoomMode === "fit" ? (
+                <>
+                  <Maximize2 className="w-3.5 h-3.5 text-[#D4AF37]" />
+                  <span>Actual Size</span>
+                </>
+              ) : (
+                <>
+                  <Smartphone className="w-3.5 h-3.5 text-cyan-400" />
+                  <span>Fit Screen</span>
+                </>
+              )}
+            </button>
+
             <button
               onClick={() => setShowPrintModal(!showPrintModal)}
               className="text-xs text-slate-300 hover:text-white flex items-center space-x-1.5 px-3 py-2 rounded-lg bg-white/5 border border-white/10"
             >
               <Info className="w-3.5 h-3.5 text-[#D4AF37]" />
-              <span>Print Guide</span>
+              <span>Guide</span>
             </button>
 
             <button
               onClick={handlePrint}
-              className="inline-flex items-center space-x-2 bg-gradient-to-r from-[#D4AF37] to-[#B8860B] hover:brightness-110 text-slate-950 font-bold text-xs px-5 py-2.5 rounded-xl shadow-lg transition-transform active:scale-95 cursor-pointer"
+              className="inline-flex items-center space-x-2 bg-gradient-to-r from-[#D4AF37] to-[#B8860B] hover:brightness-110 text-slate-950 font-bold text-xs px-4 sm:px-5 py-2.5 rounded-xl shadow-lg transition-transform active:scale-95 cursor-pointer whitespace-nowrap"
             >
               <Printer className="w-4 h-4" />
-              <span>Print / Save to PDF</span>
+              <span>Print / PDF</span>
             </button>
           </div>
         </div>
@@ -93,37 +113,57 @@ export default function PortfolioPage() {
         )}
       </div>
 
-      {/* The 10 Consecutive A4 Pages */}
-      <div className="flex flex-col items-center">
+      {/* The 10 Consecutive A4 Pages (Responsive on Mobile, Pixel-Perfect A4 on Print) */}
+      <div className="flex flex-col items-center w-full px-2 sm:px-4">
         {/* Page 1: Cover Page */}
-        <CoverPage />
+        <A4ResponsiveContainer zoomMode={zoomMode}>
+          <CoverPage />
+        </A4ResponsiveContainer>
 
         {/* Page 2: Corporate Overview */}
-        <CorporateOverviewPage />
+        <A4ResponsiveContainer zoomMode={zoomMode}>
+          <CorporateOverviewPage />
+        </A4ResponsiveContainer>
 
         {/* Page 3: Legal & Regulatory Framework */}
-        <LegalRegistryPage />
+        <A4ResponsiveContainer zoomMode={zoomMode}>
+          <LegalRegistryPage />
+        </A4ResponsiveContainer>
 
         {/* Page 4: Scope of Works & Services */}
-        <ServicesPage />
+        <A4ResponsiveContainer zoomMode={zoomMode}>
+          <ServicesPage />
+        </A4ResponsiveContainer>
 
         {/* Page 5: Project Management & Execution Methodology */}
-        <MethodologyPage />
+        <A4ResponsiveContainer zoomMode={zoomMode}>
+          <MethodologyPage />
+        </A4ResponsiveContainer>
 
         {/* Page 6: HSE & Quality Assurance Policy */}
-        <HseQualityPage />
+        <A4ResponsiveContainer zoomMode={zoomMode}>
+          <HseQualityPage />
+        </A4ResponsiveContainer>
 
         {/* Page 7: Plant, Machinery & Equipment */}
-        <EquipmentResourcesPage />
+        <A4ResponsiveContainer zoomMode={zoomMode}>
+          <EquipmentResourcesPage />
+        </A4ResponsiveContainer>
 
         {/* Page 8: Demonstrated Projects Portfolio */}
-        <ProjectsShowcasePage />
+        <A4ResponsiveContainer zoomMode={zoomMode}>
+          <ProjectsShowcasePage />
+        </A4ResponsiveContainer>
 
         {/* Page 9: Leadership & Management Team */}
-        <LeadershipPage />
+        <A4ResponsiveContainer zoomMode={zoomMode}>
+          <LeadershipPage />
+        </A4ResponsiveContainer>
 
         {/* Page 10: Official Contact Directory & Seal */}
-        <ContactDirectoryPage />
+        <A4ResponsiveContainer zoomMode={zoomMode}>
+          <ContactDirectoryPage />
+        </A4ResponsiveContainer>
       </div>
 
       {/* Bottom Floating Print Button for convenient scrolling */}
