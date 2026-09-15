@@ -6,5 +6,5 @@ export const metadata = {
 };
 
 export default function MailRedirectPage() {
-  redirect("https://www.spacemail.com/");
+  redirect("https://www.spacemail.com/login/");
 }

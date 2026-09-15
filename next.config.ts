@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/mail",
-        destination: "https://www.spacemail.com/",
+        destination: "https://www.spacemail.com/login/",
         permanent: false,
       },
     ];
