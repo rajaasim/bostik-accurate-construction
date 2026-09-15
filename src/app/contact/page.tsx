@@ -262,22 +262,15 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* CR Badge */}
-                <div className="p-5 rounded-2xl bg-slate-900 border border-slate-800 flex items-center justify-between">
+                {/* Quality & Standards Commitment Card */}
+                <div className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-between shadow-xs">
                   <div className="flex items-center space-x-3 text-xs">
                     <ShieldCheck className="w-5 h-5 text-[#D4AF37]" />
                     <div>
-                      <div className="font-bold text-white">Qatar CR # {companyConfig.registry.crNumber}</div>
-                      <div className="text-[11px] text-slate-400">Ministry of Commerce & Industry Certified</div>
+                      <div className="font-bold text-slate-900 dark:text-white">Commercial Contracting Accreditation</div>
+                      <div className="text-[11px] text-slate-500 dark:text-slate-400">QCS 2014 & QCDD Life-Safety Compliant</div>
                     </div>
                   </div>
-
-                  <Link
-                    href="/portfolio"
-                    className="text-xs text-[#D4AF37] hover:underline font-semibold"
-                  >
-                    A4 Dossier →
-                  </Link>
                 </div>
               </div>
             </div>

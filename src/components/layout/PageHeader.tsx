@@ -12,7 +12,7 @@ interface PageHeaderProps {
 export const PageHeader: React.FC<PageHeaderProps> = ({
   title,
   subtitle,
-  badge = "Qatar CR #226852 • Ministry Verified",
+  badge = "Commercial Contracting • Doha, Qatar",
   breadcrumb,
 }) => {
   return (

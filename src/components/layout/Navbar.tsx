@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { companyConfig } from "@/config/company";
 import { useTheme } from "@/context/ThemeContext";
-import { ShieldCheck, FileText, Menu, X, MessageSquare, Sun, Moon, ChevronRight, Sparkles } from "lucide-react";
+import { ShieldCheck, Menu, X, MessageSquare, Sun, Moon, ChevronRight, Sparkles } from "lucide-react";
 
 export const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -40,15 +40,14 @@ export const Navbar: React.FC = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-          {/* Left: Qatar CR & Operational Hub */}
+          {/* Left: Location & Capability */}
           <div className="flex items-center space-x-3 truncate">
-            <div className="inline-flex items-center space-x-1.5 font-semibold shrink-0 text-[#D4AF37]">
-              <ShieldCheck className="w-3.5 h-3.5" />
-              <span>Qatar CR #{companyConfig.registry.crNumber}</span>
+            <div className="inline-flex items-center space-x-1.5 font-semibold shrink-0 text-cyan-600 dark:text-cyan-400">
+              <span>Doha, State of Qatar</span>
             </div>
             <span className={`${isLight ? "text-slate-300" : "text-slate-700"} hidden sm:inline`}>•</span>
             <span className="hidden sm:inline truncate text-[11px]">
-              {companyConfig.office.building}, {companyConfig.office.zone}, Doha
+              Commercial Construction & Engineering • {companyConfig.office.zone}
             </span>
           </div>
 
@@ -155,18 +154,6 @@ export const Navbar: React.FC = () => {
           </button>
 
           <Link
-            href="/portfolio"
-            className={`inline-flex items-center space-x-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap border shadow-xs ${
-              isLight
-                ? "bg-white border-slate-300 text-slate-800 hover:bg-slate-50"
-                : "bg-white/5 border-white/15 text-[#D4AF37] hover:bg-white/10 hover:border-[#D4AF37]/50"
-            }`}
-          >
-            <FileText className="w-3.5 h-3.5 text-[#D4AF37]" />
-            <span>A4 Portfolio</span>
-          </Link>
-
-          <Link
             href="/contact"
             className="relative inline-flex items-center space-x-1.5 px-4.5 py-2.5 rounded-xl bg-gradient-to-r from-[#D4AF37] via-amber-400 to-[#B8860B] text-slate-950 text-xs font-black tracking-wide uppercase shadow-[0_4px_20px_rgba(212,175,55,0.35)] hover:shadow-[0_6px_25px_rgba(212,175,55,0.45)] transition-transform active:scale-95 whitespace-nowrap cursor-pointer"
           >
@@ -185,13 +172,6 @@ export const Navbar: React.FC = () => {
           >
             {isLight ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
           </button>
-
-          <Link
-            href="/portfolio"
-            className="sm:hidden px-2.5 py-1.5 rounded-lg bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[10px] text-[#D4AF37] font-bold"
-          >
-            A4 PDF
-          </Link>
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -252,19 +232,6 @@ export const Navbar: React.FC = () => {
           </div>
 
           <div className="pt-4 border-t border-slate-200 dark:border-white/10 space-y-3">
-            <Link
-              href="/portfolio"
-              onClick={() => setMobileMenuOpen(false)}
-              className={`w-full flex items-center justify-center space-x-2 py-3 rounded-xl border text-xs font-bold ${
-                isLight
-                  ? "bg-slate-100 border-slate-300 text-slate-800"
-                  : "bg-white/5 border-white/15 text-[#D4AF37]"
-              }`}
-            >
-              <FileText className="w-4 h-4 text-[#D4AF37]" />
-              <span>Print 10-Page A4 PDF Portfolio</span>
-            </Link>
-
             <Link
               href="/contact"
               onClick={() => setMobileMenuOpen(false)}

@@ -1,11 +1,21 @@
 import React from "react";
 import Link from "next/link";
 import { companyConfig } from "@/config/company";
-import { ShieldCheck, ArrowRight, FileText, Building2 } from "lucide-react";
+import { ArrowRight, Building2, Award } from "lucide-react";
 
 export const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-slate-50 dark:bg-[#070F1C] text-slate-900 dark:text-white transition-colors duration-300">
+    <section className="relative min-h-[75vh] flex items-center justify-center overflow-hidden bg-slate-100/70 dark:bg-[#070F1C] text-slate-900 dark:text-white transition-colors duration-300">
+      {/* Background Architectural Image with subtle overlay */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <img
+          src="https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=2000&q=80"
+          alt="Architectural Backdrop"
+          className="w-full h-full object-cover object-center opacity-10 dark:opacity-20 filter brightness-105 dark:brightness-90 contrast-125"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-100/90 via-slate-100/60 to-slate-100 dark:from-[#070F1C]/95 dark:via-[#070F1C]/85 dark:to-[#070F1C]" />
+      </div>
+
       {/* Volumetric Glows */}
       <div className="absolute -top-40 left-1/4 w-[600px] h-[600px] bg-gradient-to-br from-cyan-500/10 dark:from-cyan-500/15 via-teal-500/5 dark:via-teal-500/10 to-transparent rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute top-1/2 -right-32 w-[500px] h-[500px] bg-gradient-to-br from-emerald-500/8 dark:from-emerald-500/12 via-cyan-500/5 dark:via-cyan-500/10 to-transparent rounded-full blur-[140px] pointer-events-none" />
@@ -14,10 +24,10 @@ export const Hero: React.FC = () => {
       {/* Grid Overlay */}
       <div className="absolute inset-0 z-0 opacity-5 dark:opacity-10 bg-[linear-gradient(to_right,#1E3E62_1px,transparent_1px),linear-gradient(to_bottom,#1E3E62_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12 lg:pt-10 lg:pb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Left Column: Authoritative Editorial Presentation */}
-          <div className="lg:col-span-7 space-y-7 text-center lg:text-left">
+          <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
             {/* Ambient Badges */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5">
               <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-cyan-50 dark:bg-white/[0.04] backdrop-blur-xl border border-cyan-500/30 text-cyan-800 dark:text-cyan-300 text-xs font-bold tracking-wide shadow-xs dark:shadow-[0_0_25px_rgba(6,182,212,0.15)]">
@@ -28,9 +38,9 @@ export const Hero: React.FC = () => {
                 <span>Active Commercial Contractor • Doha, Qatar</span>
               </div>
 
-              <div className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-white/[0.03] backdrop-blur-xl border border-slate-300 dark:border-white/10 text-slate-700 dark:text-slate-300 text-xs font-mono">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#D4AF37]" />
-                <span>CR #{companyConfig.registry.crNumber}</span>
+              <div className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-slate-100/90 dark:bg-white/[0.03] backdrop-blur-xl border border-slate-300/80 dark:border-white/10 text-slate-700 dark:text-slate-300 text-xs font-medium">
+                <Award className="w-3.5 h-3.5 text-[#D4AF37]" />
+                <span>QCS 2014 Compliant Execution</span>
               </div>
             </div>
 
@@ -64,16 +74,8 @@ export const Hero: React.FC = () => {
               </Link>
 
               <Link
-                href="/portfolio"
-                className="inline-flex items-center space-x-2 px-6 py-4 rounded-xl bg-white dark:bg-white/[0.04] hover:bg-slate-50 dark:hover:bg-white/[0.08] backdrop-blur-xl border border-slate-300 dark:border-white/15 hover:border-cyan-400/50 text-slate-900 dark:text-white font-bold text-xs shadow-md transition-all"
-              >
-                <FileText className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
-                <span>10-Page A4 PDF Portfolio</span>
-              </Link>
-
-              <Link
                 href="/about"
-                className="inline-flex items-center space-x-1.5 text-xs font-semibold text-slate-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 px-3 py-2 transition-colors"
+                className="inline-flex items-center space-x-2 px-6 py-4 rounded-xl bg-white dark:bg-white/[0.04] hover:bg-slate-50 dark:hover:bg-white/[0.08] backdrop-blur-xl border border-slate-300 dark:border-white/15 hover:border-cyan-400/50 text-slate-900 dark:text-white font-bold text-xs shadow-md transition-all"
               >
                 <span>Explore Company Profile →</span>
               </Link>
@@ -125,7 +127,7 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* 4 Metric Panels */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 pt-8 border-t border-slate-200 dark:border-white/10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10 pt-6 border-t border-slate-200 dark:border-white/10">
           {companyConfig.stats.map((stat, idx) => (
             <div
               key={idx}

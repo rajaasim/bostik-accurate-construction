@@ -7,7 +7,7 @@ export const TeamSection: React.FC = () => {
   const { businessDevelopment, operationsManager } = companyConfig.contacts;
 
   return (
-    <section id="team" className="py-20 bg-slate-50 dark:bg-[#0F172A] text-slate-900 dark:text-white relative transition-colors duration-300">
+    <section id="team" className="py-20 bg-white dark:bg-[#0F172A] text-slate-900 dark:text-white relative transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
@@ -27,7 +27,7 @@ export const TeamSection: React.FC = () => {
         {/* Two Key Leaders Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-10">
           {/* Operations Manager: Awais Qamar */}
-          <div className="p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-amber-500/40 dark:hover:border-[#D4AF37]/40 transition-all shadow-md dark:shadow-xl flex flex-col justify-between">
+          <div className="p-8 rounded-2xl bg-slate-50/70 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-amber-500/40 dark:hover:border-[#D4AF37]/40 transition-all shadow-md dark:shadow-xl flex flex-col justify-between">
             <div>
               <div className="flex items-center space-x-4 mb-4">
                 <div className="w-14 h-14 rounded-2xl bg-[#0B192C] border-2 border-[#D4AF37] flex items-center justify-center text-[#D4AF37] font-black text-lg shadow-md">
@@ -42,7 +42,7 @@ export const TeamSection: React.FC = () => {
 
               <div className="inline-flex items-center space-x-1.5 px-3 py-0.5 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-700/50 text-[11px] font-semibold mb-4">
                 <ShieldCheck className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
-                <span>Full Authority (Qatar CR 226852)</span>
+                <span>Full Signatory & Operational Authority</span>
               </div>
 
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
@@ -76,7 +76,7 @@ export const TeamSection: React.FC = () => {
           </div>
 
           {/* Business Development: Jhunelle Anne Ballocanag Ogoy */}
-          <div className="p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-amber-500/40 dark:hover:border-[#D4AF37]/40 transition-all shadow-md dark:shadow-xl flex flex-col justify-between">
+          <div className="p-8 rounded-2xl bg-slate-50/70 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-amber-500/40 dark:hover:border-[#D4AF37]/40 transition-all shadow-md dark:shadow-xl flex flex-col justify-between">
             <div>
               <div className="flex items-center space-x-4 mb-4">
                 <div className="w-14 h-14 rounded-2xl bg-[#1E3E62] border-2 border-blue-400 flex items-center justify-center text-white font-black text-lg shadow-md">

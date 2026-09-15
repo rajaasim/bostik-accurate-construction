@@ -43,8 +43,8 @@ export default function AboutPage() {
                   {companyConfig.brand.descriptionEn}
                 </p>
 
-                <p className="text-slate-400 text-sm leading-relaxed">
-                  Licensed under Qatar Commercial Registration <span className="font-mono text-[#D4AF37] font-bold">#{companyConfig.registry.crNumber}</span>, Bostik Accurate Construction operates with a hands-on management approach. We combine advanced project management information systems with rigorous on-site oversight to eliminate delays, enforce strict Qatar Construction Specifications (QCS 2014), and uphold our Zero-Harm safety culture.
+                <p className="text-sm text-slate-300 leading-relaxed font-light">
+                  Officially incorporated and registered under Qatar commercial law, Bostik Accurate Construction operates with a hands-on management approach. We combine advanced project management information systems with rigorous on-site oversight to eliminate delays, enforce strict Qatar Construction Specifications (QCS 2014), and uphold our Zero-Harm safety culture.
                 </p>
 
                 {/* Key Metrics */}
@@ -210,18 +210,18 @@ export default function AboutPage() {
             {/* Bottom Action Bar */}
             <div className="p-8 rounded-2xl bg-gradient-to-r from-[#0B192C] to-[#1E3E62] border border-[#D4AF37]/30 flex flex-col sm:flex-row items-center justify-between gap-6">
               <div>
-                <h4 className="text-lg font-bold text-white">Download Our Full Prequalification Dossier</h4>
+                <h4 className="text-lg font-bold text-white">Ready to Discuss Your Commercial Project?</h4>
                 <p className="text-xs text-slate-300 mt-1">
-                  Review our complete 10-page A4 company profile formatted for client submittals and tender reviews.
+                  Connect with our commercial engineering team in Doha for project feasibility, pricing, and execution schedules.
                 </p>
               </div>
               <div className="flex items-center space-x-3 shrink-0">
                 <Link
-                  href="/portfolio"
+                  href="/contact"
                   className="inline-flex items-center space-x-2 px-5 py-3 rounded-xl bg-[#D4AF37] hover:bg-[#B8860B] text-slate-950 text-xs font-bold uppercase tracking-wider shadow-lg"
                 >
-                  <FileText className="w-4 h-4" />
-                  <span>View 10-Page Profile</span>
+                  <ArrowRight className="w-4 h-4" />
+                  <span>Contact Our Team</span>
                 </Link>
               </div>
             </div>

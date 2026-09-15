@@ -16,7 +16,7 @@ export const ProjectsGallery: React.FC = () => {
       : companyConfig.projects.filter((p) => p.category === selectedCategory);
 
   return (
-    <section id="projects" className="py-20 bg-slate-100/70 dark:bg-[#0F172A] text-slate-900 dark:text-white relative transition-colors duration-300">
+    <section id="projects" className="py-20 bg-white dark:bg-[#0F172A] text-slate-900 dark:text-white relative transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">

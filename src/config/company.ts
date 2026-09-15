@@ -35,8 +35,8 @@ export const companyConfig: CompanyProfile = {
       },
     ],
     activeDomain: PRIMARY_DOMAIN,
-    primaryEmail: `info@${PRIMARY_DOMAIN}`,
-    supportEmail: `projects@${PRIMARY_DOMAIN}`,
+    primaryEmail: "contact@bostikaccurate.com",
+    supportEmail: "contact@bostikaccurate.com",
     careersEmail: `careers@${PRIMARY_DOMAIN}`,
     colors: {
       navyDark: "#0B192C",
@@ -98,15 +98,15 @@ export const companyConfig: CompanyProfile = {
       phoneFormatted: "+974 7770 1945",
       whatsapp: "97477701945",
       email: `awais@${PRIMARY_DOMAIN}`,
-      bio: "Holding full and absolute management authority under Qatar CR #226852. Overseeing on-site execution, engineering standards, procurement logistics, and stringent quality control.",
+      bio: "Holding full and absolute management and signatory authority. Overseeing on-site execution, engineering standards, procurement logistics, and stringent quality control.",
     },
   },
 
   stats: [
     {
-      label: "Official Qatar CR",
-      value: "226852",
-      description: "Ministry of Commerce & Industry Certified",
+      label: "Commercial Scope",
+      value: "Turnkey",
+      description: "Non-Residential & Industrial Building",
     },
     {
       label: "On-Time Delivery",

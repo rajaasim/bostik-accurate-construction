@@ -51,8 +51,8 @@ export const AboutSection: React.FC = () => {
               </div>
 
               <div>
-                <div className="text-lg font-black text-cyan-600 dark:text-cyan-400">Active CR</div>
-                <div className="text-xs font-bold text-slate-900 dark:text-white mt-0.5">MOCI Certified</div>
+                <div className="text-lg font-black text-cyan-600 dark:text-cyan-400">Accredited</div>
+                <div className="text-xs font-bold text-slate-900 dark:text-white mt-0.5">MOCI Registered</div>
                 <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1 leading-snug">
                   Qatar Chamber of Commerce verified enterprise.
                 </p>

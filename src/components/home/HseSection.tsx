@@ -5,7 +5,7 @@ import { ShieldCheck, HardHat, Award, ArrowRight, Activity, FileCheck } from "lu
 
 export const HseSection: React.FC = () => {
   return (
-    <section id="hse" className="py-24 bg-white dark:bg-[#091422] text-slate-900 dark:text-white relative transition-colors duration-300">
+    <section id="hse" className="py-24 bg-slate-100/70 dark:bg-[#091422] text-slate-900 dark:text-white relative transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 border-b border-slate-200 dark:border-slate-800 pb-8">
@@ -30,7 +30,7 @@ export const HseSection: React.FC = () => {
 
         {/* 4-Metric Safety Dashboard Ribbon */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-          <div className="p-6 rounded-2xl bg-slate-50 dark:bg-[#050C17] border border-slate-200 dark:border-slate-800 flex items-center space-x-4 shadow-sm">
+          <div className="p-6 rounded-2xl bg-white dark:bg-[#050C17] border border-slate-200 dark:border-slate-800 flex items-center space-x-4 shadow-sm">
             <div className="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-950/60 border border-emerald-300 dark:border-emerald-700/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400 shrink-0">
               <Activity className="w-6 h-6" />
             </div>
@@ -41,7 +41,7 @@ export const HseSection: React.FC = () => {
             </div>
           </div>
 
-          <div className="p-6 rounded-2xl bg-slate-50 dark:bg-[#050C17] border border-slate-200 dark:border-slate-800 flex items-center space-x-4 shadow-sm">
+          <div className="p-6 rounded-2xl bg-white dark:bg-[#050C17] border border-slate-200 dark:border-slate-800 flex items-center space-x-4 shadow-sm">
             <div className="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-950/60 border border-amber-300 dark:border-amber-700/50 flex items-center justify-center text-amber-700 dark:text-[#D4AF37] shrink-0">
               <HardHat className="w-6 h-6" />
             </div>
@@ -52,7 +52,7 @@ export const HseSection: React.FC = () => {
             </div>
           </div>
 
-          <div className="p-6 rounded-2xl bg-slate-50 dark:bg-[#050C17] border border-slate-200 dark:border-slate-800 flex items-center space-x-4 shadow-sm">
+          <div className="p-6 rounded-2xl bg-white dark:bg-[#050C17] border border-slate-200 dark:border-slate-800 flex items-center space-x-4 shadow-sm">
             <div className="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-950/60 border border-blue-300 dark:border-blue-700/50 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0">
               <FileCheck className="w-6 h-6" />
             </div>
@@ -63,7 +63,7 @@ export const HseSection: React.FC = () => {
             </div>
           </div>
 
-          <div className="p-6 rounded-2xl bg-slate-50 dark:bg-[#050C17] border border-slate-200 dark:border-slate-800 flex items-center space-x-4 shadow-sm">
+          <div className="p-6 rounded-2xl bg-white dark:bg-[#050C17] border border-slate-200 dark:border-slate-800 flex items-center space-x-4 shadow-sm">
             <div className="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-950/60 border border-purple-300 dark:border-purple-700/50 flex items-center justify-center text-purple-600 dark:text-purple-400 shrink-0">
               <Award className="w-6 h-6" />
             </div>
@@ -77,7 +77,7 @@ export const HseSection: React.FC = () => {
 
         {/* 3 Distinct Safety Pillars */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <div className="p-7 rounded-2xl bg-slate-50 dark:bg-[#0B1828] border border-slate-200 dark:border-slate-800 flex flex-col justify-between shadow-sm">
+          <div className="p-7 rounded-2xl bg-white dark:bg-[#0B1828] border border-slate-200 dark:border-slate-800 flex flex-col justify-between shadow-sm">
             <div>
               <div className="w-10 h-10 rounded-xl bg-amber-50 dark:bg-slate-900 flex items-center justify-center text-amber-700 dark:text-[#D4AF37] mb-4">
                 <HardHat className="w-5 h-5" />
@@ -92,7 +92,7 @@ export const HseSection: React.FC = () => {
             </div>
           </div>
 
-          <div className="p-7 rounded-2xl bg-slate-50 dark:bg-[#0B1828] border border-slate-200 dark:border-slate-800 flex flex-col justify-between shadow-sm">
+          <div className="p-7 rounded-2xl bg-white dark:bg-[#0B1828] border border-slate-200 dark:border-slate-800 flex flex-col justify-between shadow-sm">
             <div>
               <div className="w-10 h-10 rounded-xl bg-purple-50 dark:bg-slate-900 flex items-center justify-center text-purple-700 dark:text-[#D4AF37] mb-4">
                 <Award className="w-5 h-5" />
@@ -107,7 +107,7 @@ export const HseSection: React.FC = () => {
             </div>
           </div>
 
-          <div className="p-7 rounded-2xl bg-slate-50 dark:bg-[#0B1828] border border-slate-200 dark:border-slate-800 flex flex-col justify-between shadow-sm">
+          <div className="p-7 rounded-2xl bg-white dark:bg-[#0B1828] border border-slate-200 dark:border-slate-800 flex flex-col justify-between shadow-sm">
             <div>
               <div className="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-slate-900 flex items-center justify-center text-emerald-700 dark:text-[#D4AF37] mb-4">
                 <ShieldCheck className="w-5 h-5" />

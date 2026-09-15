@@ -26,10 +26,10 @@ export const Footer: React.FC = () => {
 
           <div className="flex flex-wrap items-center gap-4">
             <Link
-              href="/portfolio"
+              href="/contact"
               className="inline-flex items-center space-x-2 bg-white/10 hover:bg-white/20 text-white font-bold text-xs px-5 py-3 rounded-xl border border-white/20 transition-all"
             >
-              <span>Download 10-Page Profile</span>
+              <span>Request Quotation</span>
               <ArrowUpRight className="w-4 h-4" />
             </Link>
             <a
@@ -105,9 +105,6 @@ export const Footer: React.FC = () => {
             </li>
             <li>
               <Link href="/contact" className="hover:text-[#D4AF37] transition-colors">Contact & Tender Submissions</Link>
-            </li>
-            <li>
-              <Link href="/portfolio" className="hover:text-[#D4AF37] transition-colors text-[#D4AF37] font-semibold">10-Page A4 PDF Portfolio</Link>
             </li>
           </ul>
         </div>
@@ -187,11 +184,7 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="flex items-center space-x-6 text-[11px]">
-            <Link href="/portfolio" className="hover:text-[#D4AF37] transition-colors">
-              Print A4 PDF Portfolio
-            </Link>
-            <span>•</span>
-            <span className="text-slate-400 font-mono">Domain: {companyConfig.brand.activeDomain}</span>
+            <span className="text-slate-400 font-mono">Official Domain: {companyConfig.brand.activeDomain}</span>
           </div>
         </div>
       </div>

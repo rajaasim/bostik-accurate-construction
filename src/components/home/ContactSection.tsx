@@ -22,7 +22,7 @@ export const ContactSection: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-slate-100/60 dark:bg-[#0B192C] text-slate-900 dark:text-white relative transition-colors duration-300">
+    <section id="contact" className="py-24 bg-slate-100/70 dark:bg-[#0B192C] text-slate-900 dark:text-white relative transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -253,10 +253,10 @@ export const ContactSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="p-4 rounded-xl bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/60 flex items-center space-x-3 text-xs text-slate-700 dark:text-slate-300">
+            <div className="p-4 rounded-xl bg-white dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/60 flex items-center space-x-3 text-xs text-slate-700 dark:text-slate-300 shadow-xs">
               <ShieldCheck className="w-5 h-5 text-amber-700 dark:text-[#D4AF37] shrink-0" />
               <span>
-                Commercial Registration # <strong className="text-slate-900 dark:text-white font-mono">{companyConfig.registry.crNumber}</strong> verified by the Ministry of Commerce & Industry, Qatar.
+                Licensed commercial contractor compliant with the regulations and standards of the State of Qatar.
               </span>
             </div>
           </div>

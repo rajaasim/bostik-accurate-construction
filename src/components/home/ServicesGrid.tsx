@@ -13,7 +13,7 @@ export const ServicesGrid: React.FC = () => {
   const CurrentIcon = icons[activeTab % icons.length];
 
   return (
-    <section id="services" className="py-24 relative overflow-hidden bg-slate-50 dark:bg-[#070F1C] text-slate-900 dark:text-white transition-colors duration-300">
+    <section id="services" className="py-24 relative overflow-hidden bg-slate-100/70 dark:bg-[#070F1C] text-slate-900 dark:text-white transition-colors duration-300">
       {/* Volumetric Glows */}
       <div className="absolute top-1/3 -left-32 w-96 h-96 bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-10 right-0 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none" />
