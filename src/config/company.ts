@@ -37,7 +37,7 @@ export const companyConfig: CompanyProfile = {
     activeDomain: PRIMARY_DOMAIN,
     primaryEmail: "contact@bostikaccurate.com",
     supportEmail: "contact@bostikaccurate.com",
-    careersEmail: `careers@${PRIMARY_DOMAIN}`,
+    careersEmail: "contact@bostikaccurate.com",
     colors: {
       navyDark: "#0B192C",
       navyLight: "#1E3E62",
@@ -76,7 +76,7 @@ export const companyConfig: CompanyProfile = {
     countryArabic: "دولة قطر",
     fullAddress: "Building No. 23, Street 784, Zone 53, Floor 1, Doha, State of Qatar",
     fullAddressArabic: "مبنى رقم 23، شارع 784، منطقة 53، الطابق 1، الدوحة، دولة قطر",
-    googleMapsUrl: "https://maps.google.com/?q=Doha+Zone+53+Street+784",
+    googleMapsUrl: "https://maps.google.com/?q=Doha,+Qatar",
   },
 
   contacts: {
@@ -87,7 +87,7 @@ export const companyConfig: CompanyProfile = {
       phone: "+97470834949",
       phoneFormatted: "+974 7083 4949",
       whatsapp: "97470834949",
-      email: `jhunelle@${PRIMARY_DOMAIN}`,
+      email: "contact@bostikaccurate.com",
       bio: "Spearheading strategic client partnerships, project tenders, commercial inquiries, and international business alliances across Qatar's evolving commercial real estate sector.",
     },
     operationsManager: {
@@ -97,7 +97,7 @@ export const companyConfig: CompanyProfile = {
       phone: "+97477701945",
       phoneFormatted: "+974 7770 1945",
       whatsapp: "97477701945",
-      email: `awais@${PRIMARY_DOMAIN}`,
+      email: "contact@bostikaccurate.com",
       bio: "Holding full and absolute management and signatory authority. Overseeing on-site execution, engineering standards, procurement logistics, and stringent quality control.",
     },
   },

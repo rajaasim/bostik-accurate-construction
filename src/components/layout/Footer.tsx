@@ -49,8 +49,12 @@ export const Footer: React.FC = () => {
         {/* Col 1: Identity & Legal Registration */}
         <div className="space-y-4">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-[#1E3E62] border border-[#D4AF37]/50 flex items-center justify-center text-[#D4AF37] font-black text-base">
-              BA
+            <div className="w-10 h-10 rounded-xl bg-[#1E3E62] border border-[#D4AF37]/50 flex items-center justify-center p-1 shadow-md">
+              <img
+                src="/bostikaccurate-logo.svg"
+                alt="Bostik Accurate Logo"
+                className="w-full h-full object-contain"
+              />
             </div>
             <div>
               <div className="font-extrabold text-white text-sm uppercase tracking-wide">
@@ -114,31 +118,29 @@ export const Footer: React.FC = () => {
           <h4 className="text-xs font-bold text-white uppercase tracking-widest border-b border-slate-800 pb-2">
             Direct Contacts
           </h4>
-          <div className="space-y-3 text-xs">
-            <div>
-              <div className="font-bold text-white">{businessDevelopment.name}</div>
-              <div className="text-[11px] text-[#D4AF37]">{businessDevelopment.role}</div>
-              <a
-                href={`tel:${businessDevelopment.phone}`}
-                className="font-mono text-slate-300 hover:text-white block mt-0.5"
-              >
-                {businessDevelopment.phoneFormatted}
-              </a>
-              <div className="text-[11px] text-slate-500 font-mono">{businessDevelopment.email}</div>
-            </div>
+              <div className="space-y-3 text-xs">
+                <div>
+                  <div className="font-bold text-white">{businessDevelopment.name}</div>
+                  <div className="text-[11px] text-[#D4AF37]">{businessDevelopment.role}</div>
+                  <a
+                    href={`tel:${businessDevelopment.phone}`}
+                    className="font-mono text-slate-300 hover:text-white block mt-0.5"
+                  >
+                    {businessDevelopment.phoneFormatted}
+                  </a>
+                </div>
 
-            <div className="pt-2 border-t border-slate-800/80">
-              <div className="font-bold text-white">{operationsManager.name}</div>
-              <div className="text-[11px] text-[#D4AF37]">{operationsManager.role}</div>
-              <a
-                href={`tel:${operationsManager.phone}`}
-                className="font-mono text-slate-300 hover:text-white block mt-0.5"
-              >
-                {operationsManager.phoneFormatted}
-              </a>
-              <div className="text-[11px] text-slate-500 font-mono">{operationsManager.email}</div>
-            </div>
-          </div>
+                <div className="pt-2 border-t border-slate-800/80">
+                  <div className="font-bold text-white">{operationsManager.name}</div>
+                  <div className="text-[11px] text-[#D4AF37]">{operationsManager.role}</div>
+                  <a
+                    href={`tel:${operationsManager.phone}`}
+                    className="font-mono text-slate-300 hover:text-white block mt-0.5"
+                  >
+                    {operationsManager.phoneFormatted}
+                  </a>
+                </div>
+              </div>
         </div>
 
         {/* Col 4: Office Location & Legal */}

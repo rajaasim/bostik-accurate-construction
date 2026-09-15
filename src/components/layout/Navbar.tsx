@@ -84,13 +84,17 @@ export const Navbar: React.FC = () => {
             <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-cyan-500/30 via-[#D4AF37]/30 to-emerald-500/30 blur-md opacity-75 group-hover:opacity-100 transition-opacity" />
             
             <div
-              className={`relative w-11 h-11 rounded-xl flex items-center justify-center font-black text-lg shadow-lg transition-transform group-hover:scale-[1.02] ${
+              className={`relative w-11 h-11 rounded-xl p-1.5 flex items-center justify-center shadow-lg transition-transform group-hover:scale-[1.02] ${
                 isLight
-                  ? "bg-[#0B192C] text-[#D4AF37] border border-[#D4AF37]/40"
-                  : "bg-gradient-to-br from-[#12233C] to-[#081220] border border-white/20 text-[#D4AF37]"
+                  ? "bg-slate-100 border border-slate-300"
+                  : "bg-gradient-to-br from-[#12233C] to-[#081220] border border-white/20"
               }`}
             >
-              BA
+              <img
+                src="/bostikaccurate-logo.svg"
+                alt="Bostik Accurate Logo"
+                className="w-full h-full object-contain"
+              />
             </div>
           </div>
 
